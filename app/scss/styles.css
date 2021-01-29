@@ -1,13 +1,14 @@
+.has-fade {
+  visibility: hidden;
+}
+
 @-webkit-keyframes overlay-fade-in {
   from {
     visibility: hidden;
     opacity: 0;
   }
-  1% {
-    visibility: visible;
-    opacity: 0;
-  }
   to {
+    visibility: visible;
     opacity: 1;
   }
 }
@@ -17,18 +18,15 @@
     visibility: hidden;
     opacity: 0;
   }
-  1% {
-    visibility: visible;
-    opacity: 0;
-  }
   to {
+    visibility: visible;
     opacity: 1;
   }
 }
 
 .fade-in {
-  -webkit-animation: overlay-fade-in 300ms ease-in-out forwards;
-          animation: overlay-fade-in 300ms ease-in-out forwards;
+  -webkit-animation: overlay-fade-in 200ms ease-in-out forwards;
+          animation: overlay-fade-in 200ms ease-in-out forwards;
 }
 
 @-webkit-keyframes overlay-fade-out {
@@ -54,8 +52,8 @@
 }
 
 .fade-out {
-  -webkit-animation: overlay-fade-out 300ms ease-in-out forwards;
-          animation: overlay-fade-out 300ms ease-in-out forwards;
+  -webkit-animation: overlay-fade-out 200ms ease-in-out forwards;
+          animation: overlay-fade-out 200ms ease-in-out forwards;
 }
 
 html {
@@ -81,8 +79,19 @@ body {
   line-height: 1.3;
 }
 
-a, a:visited, a:hover {
+body.lock-scroll {
+  overflow: hidden;
+}
+
+a,
+a:visited,
+a:hover {
   text-decoration: none;
+}
+
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .flex {
@@ -109,7 +118,8 @@ a, a:visited, a:hover {
           align-items: center;
 }
 
-button, .button {
+button,
+.button {
   padding: 0.875rem 2.1875rem;
   background: -webkit-gradient(linear, left top, right top, from(#31d35c), to(#2bb7da));
   background: linear-gradient(to right, #31d35c, #2bb7da);
@@ -136,16 +146,16 @@ button, .button {
   display: block;
 }
 
-.header.open .header__menu > span:first-child {
+.header.open .header__toggle > span:first-child {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 
-.header.open .header__menu > span:nth-child(2) {
+.header.open .header__toggle > span:nth-child(2) {
   opacity: 0;
 }
 
-.header.open .header__menu > span:last-child {
+.header.open .header__toggle > span:last-child {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
@@ -153,7 +163,7 @@ button, .button {
 .header .overlay {
   opacity: 0;
   position: fixed;
-  top: 3.75rem;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
@@ -162,7 +172,10 @@ button, .button {
 }
 
 .header nav {
-  padding: 1.0625rem 1.5rem;
+  position: relative;
+  background-color: white;
+  padding-top: 1.0625rem;
+  padding-bottom: 1.0625rem;
 }
 
 .header__logo img {
@@ -170,7 +183,7 @@ button, .button {
   height: 1.375rem;
 }
 
-.header__menu > span {
+.header__toggle > span {
   display: block;
   width: 26px;
   height: 2px;
@@ -181,22 +194,41 @@ button, .button {
           transform-origin: 3px 1px;
 }
 
-.header__menu > span:not(:last-child) {
+.header__toggle > span:not(:last-child) {
   margin-bottom: 5px;
 }
 
-.header__menu.open > span:first-child {
+.header__toggle.open > span:first-child {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 
-.header__menu.open > span:nth-child(2) {
+.header__toggle.open > span:nth-child(2) {
   opacity: 0;
 }
 
-.header__menu.open > span:last-child {
+.header__toggle.open > span:last-child {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
+}
+
+.header__menu {
+  position: absolute;
+  width: calc(100% - 3rem);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: white;
+  margin-top: 1.5rem;
+  padding: 1.625rem;
+  border-radius: 5px;
+}
+
+.header__menu a {
+  display: block;
+  padding: 0.625rem;
+  color: #2d314d;
+  text-align: center;
 }
 
 .header__links a {
