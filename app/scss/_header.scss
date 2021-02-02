@@ -122,14 +122,4 @@
       }
     }
   }
-
-  &__cta {
-    color: $White;
-    transition: opacity 300ms ease-in-out;
-    opacity: 1;
-
-    &:hover {
-      opacity: 0.75;
-    }
-  }
 }
