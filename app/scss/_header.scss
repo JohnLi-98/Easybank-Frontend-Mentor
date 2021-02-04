@@ -1,9 +1,8 @@
 .header {
-  &.open {
-    .overlay {
-      display: block;
-    }
+  position: relative;
+  z-index: 1;
 
+  &.open {
     .header__toggle {
       > span:first-child {
         transform: rotate(45deg);
