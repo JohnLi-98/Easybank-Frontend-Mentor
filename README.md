@@ -1,6 +1,6 @@
 # Easybank Landing Page
 
-This project was created as a challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/easybank-landing-page-WaUhkoDN). The aim was to create it to look as close to the design as possible.
+This project was created as a challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/easybank-landing-page-WaUhkoDN). The aim was to create a webpage to look as close to the design as possible.
 
 ## Motivation
 
